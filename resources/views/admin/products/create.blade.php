@@ -13,25 +13,34 @@
                 </h3>
             </div>
             <div class="card-body">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <form action="{{ url('admin/products') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                         Home
-                    </button>
-                </li>
+                        </button>
+                    </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="SEOtag-tab" data-bs-toggle="tab" data-bs-target="#SEOtag" type="button" role="tab" aria-controls="SEOtag" aria-selected="false">
+                        <button class="nav-link" id="SEOtag-tab" data-bs-toggle="tab" data-bs-target="#SEOtag" type="button" role="tab" aria-controls="SEOtag" aria-selected="false">
                         SEO Tags
-                    </button>
+                        </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="false">
+                        <button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="false">
                         Details
-                    </button>
+                        </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="image-tab" data-bs-toggle="tab" data-bs-target="#image" type="button" role="tab" aria-controls="image" aria-selected="false">
+                        Product Image
+                        </button>
                 </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane fade border p-3 show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="mb3">
                         <label>Category</label>
                         <select name="category_id" class="form-control">
@@ -66,7 +75,7 @@
                     </div>
 
                 </div>
-                <div class="tab-pane fade" id="SEOtag" role="tabpanel" aria-labelledby="SEOtag-tab">
+                <div class="tab-pane fade border p-3" id="SEOtag" role="tabpanel" aria-labelledby="SEOtag-tab">
                     <div class="mb-3">
                         <label>{Meta Title</label>
                             <input type="text" name="meta_title" class="form-control" />
@@ -80,14 +89,52 @@
                             <textarea name="meta keyword" class="form-control" rows="4"></textarea>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
+                <div class="tab-pane fade border p-3" id="details" role="tabpanel" aria-labelledby="details-tab">
                     <div class="row">
                         <div class="col-md-4">
-
+                            <div class="mb-3">
+                                <label>{Original Price</label>
+                                    <input type="text" name="original-price" class="form-control" />
+                            </div>
+                        </div>
+                            <div class="col-md-4">
+                            <div class="mb-3">
+                                <label>{Selling Price</label>
+                                    <input type="text" name="selling-price" class="form-control" />
+                            </div>
+                        </div>
+                            <div class="col-md-4">
+                            <div class="mb-3">
+                                <label>{Quantity</label>
+                                    <input type="text" name="quantity" class="form-control" />
+                            </div>
+                        </div>
+                            <div class="col-md-4">
+                            <div class="mb-3">
+                                <label>{Trending</label>
+                                    <input type="checkbox" name="trending" style="width: 50px; height: 50px;" />
+                            </div>
+                        </div>
+                            <div class="col-md-4">
+                            <div class="mb-3">
+                                <label>{Status</label>
+                                    <input type="checkbox" name="status" style="width: 50px; height: 50px;" />
+                            </div>
                         </div>
                     </div>
                 </div>
+                    <div class="tab-pane fade border p-3" id="image" role="tabpanel" aria-labelledby="image-tab">
+                        <div class="mb-3">
+                            <label>Upload Product Images</label>
+                            <input type="file" name="image" multiple class="form-control" />
+                        </div>
+                    </div>
                 </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
             </div>
         </div>
     </div>
