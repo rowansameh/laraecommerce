@@ -26,32 +26,32 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#product" aria-expanded="false" aria-controls="product">
+            <a class="nav-link" data-bs-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products">
             <i class="mdi mdi-plus-circle menu-icon"></i>
             <span class="menu-title">Products</span>
             <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="product">
+            <div class="collapse" id="products">
             <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Add Product</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> View Products </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products/create')}}"> Add Product</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products')}}"> View Products </a></li>
 
             </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin/brands">
+            <a class="nav-link" href="{{ url('admin/brands')}}">
             <i class="mdi mdi-view-headline menu-icon"></i>
             <span class="menu-title">Brands</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-bs-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
             <i class="mdi mdi-account-multiple-plus menu-icon"></i>
             <span class="menu-title">Users</span>
             <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
+            <div class="collapse" id="users">
             <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
