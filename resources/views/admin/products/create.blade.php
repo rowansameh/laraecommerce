@@ -81,7 +81,11 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="details-tab">
+                    <div class="row">
+                        <div class="col-md-4">
 
+                        </div>
+                    </div>
                 </div>
                 </div>
             </div>
