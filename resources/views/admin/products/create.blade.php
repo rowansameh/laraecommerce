@@ -13,6 +13,15 @@
                 </h3>
             </div>
             <div class="card-body">
+
+                @if ($errors->any())
+                <div class="alert alert-warning">
+                    @foreach ($errors as $error)
+                    <div>{{$error}}</div>
+                    @endforeach
+                </div>
+                @endif
+
                 <form action="{{ url('admin/products') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
@@ -50,11 +59,11 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label>{Product Name</label>
+                        <label>Product Name</label>
                             <input type="text" name="name" class="form-control" />
                     </div>
                     <div class="mb-3">
-                        <label>{Product Slug</label>
+                        <label>Product Slug</label>
                             <input type="text" name="slug" class="form-control" />
                     </div>
                     <div class="mb3">
@@ -66,58 +75,58 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label>{Small Description (500 Words)</label>
-                            <textarea name="small description" class="form-control" rows="4"></textarea>
+                        <label>Small Description (500 Words)</label>
+                            <textarea name="small_description" class="form-control" rows="4"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label>{Description</label>
+                        <label>Description</label>
                             <textarea name="description" class="form-control" rows="4"></textarea>
                     </div>
 
                 </div>
                 <div class="tab-pane fade border p-3" id="SEOtag" role="tabpanel" aria-labelledby="SEOtag-tab">
                     <div class="mb-3">
-                        <label>{Meta Title</label>
+                        <label>Meta Title</label>
                             <input type="text" name="meta_title" class="form-control" />
                     </div>
                     <div class="mb-3">
-                        <label>{Meta Description</label>
+                        <label>Meta Description</label>
                             <textarea name="meta_description" class="form-control" rows="4"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label>{Meta Keyword</label>
-                            <textarea name="meta keyword" class="form-control" rows="4"></textarea>
+                        <label>Meta Keyword</label>
+                            <textarea name="meta_keyword" class="form-control" rows="4"></textarea>
                     </div>
                 </div>
                 <div class="tab-pane fade border p-3" id="details" role="tabpanel" aria-labelledby="details-tab">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label>{Original Price</label>
-                                    <input type="text" name="original-price" class="form-control" />
+                                <label>Original Price</label>
+                                    <input type="text" name="original_price" class="form-control" />
                             </div>
                         </div>
                             <div class="col-md-4">
                             <div class="mb-3">
-                                <label>{Selling Price</label>
-                                    <input type="text" name="selling-price" class="form-control" />
+                                <label>Selling Price</label>
+                                    <input type="text" name="selling_price" class="form-control" />
                             </div>
                         </div>
                             <div class="col-md-4">
                             <div class="mb-3">
-                                <label>{Quantity</label>
+                                <label>Quantity</label>
                                     <input type="text" name="quantity" class="form-control" />
                             </div>
                         </div>
                             <div class="col-md-4">
                             <div class="mb-3">
-                                <label>{Trending</label>
+                                <label>Trending</label>
                                     <input type="checkbox" name="trending" style="width: 50px; height: 50px;" />
                             </div>
                         </div>
                             <div class="col-md-4">
                             <div class="mb-3">
-                                <label>{Status</label>
+                                <label>Status</label>
                                     <input type="checkbox" name="status" style="width: 50px; height: 50px;" />
                             </div>
                         </div>
@@ -126,7 +135,7 @@
                     <div class="tab-pane fade border p-3" id="image" role="tabpanel" aria-labelledby="image-tab">
                         <div class="mb-3">
                             <label>Upload Product Images</label>
-                            <input type="file" name="image" multiple class="form-control" />
+                            <input type="file" name="image[]" multiple class="form-control" />
                         </div>
                     </div>
                 </div>

@@ -46,6 +46,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/colors')}}">
+            <i class="mdi mdi-palette menu-icon"></i>
+            <span class="menu-title">Colors</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
             <i class="mdi mdi-account-multiple-plus menu-icon"></i>
             <span class="menu-title">Users</span>
@@ -53,11 +59,8 @@
             </a>
             <div class="collapse" id="users">
             <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Add User </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> View Users </a></li>
             </ul>
             </div>
         </li>
