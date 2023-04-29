@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header">
                 <h3>Slider List
-                    <a href="{{ url('admin/slider/create') }}" class="btn btn-primary btn-sm text-white float-end">
+                    <a href="{{ url('admin/sliders/create') }}" class="btn btn-primary btn-sm text-white float-end">
                     Add Slider
                 </a>
                 </h3>
@@ -39,8 +39,13 @@
                                 </td>
                                 <td>{{ $slider->status == '0' ? 'visible':'Hidden' }}</td>
                                 <td>
-                                    <a href="" class="btn btn-success">Edit</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a href="{{ url('admin/sliders/'.$slider->id.'/edit') }}" class="btn btn-success">Edit</a>
+                                    <a href="{{ url('admin/sliders/'.$slider->id.'/delete') }}"
+                                        onclick="return confirm('Are you sure you want to delete this data?');"
+                                        class="btn btn-danger"
+                                    >
+                                        Delete
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

@@ -27,9 +27,11 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function () {
         Route::get('sliders', 'index');
-        Route::get('slider/create', 'create');
-        Route::post('slider/create', 'store');
-
+        Route::get('sliders/create', 'create');
+        Route::post('sliders/create', 'store');
+        Route::get('sliders/{slider}/edit', 'edit');
+        Route::put('sliders/{slider}', 'update');
+        Route::get('sliders/{slider}/delete', 'destroy');
     });
     // category routes
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
