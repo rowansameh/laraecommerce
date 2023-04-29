@@ -25,6 +25,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
+    Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function () {
+        Route::get('sliders', 'index');
+        Route::get('slider/create', 'create');
+        Route::post('slider/create', 'store');
+
+    });
     // category routes
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
         Route::get('/category', 'index');
@@ -48,10 +54,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
 
-    Route::controller(App\Http\Controllers\Admin\ColorController::class)->group(function () {
-        Route::get('/colors', 'index');
-        Route::get('/colors/create', 'create');
 
-    });
+
+
 });
 

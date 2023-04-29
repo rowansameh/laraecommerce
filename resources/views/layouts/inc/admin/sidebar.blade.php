@@ -1,7 +1,7 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin/dashboard">
             <i class="mdi mdi-camera-timer menu-icon"></i>
             <span class="menu-title">Dashboard</span>
             </a>
@@ -46,12 +46,6 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('admin/colors')}}">
-            <i class="mdi mdi-palette menu-icon"></i>
-            <span class="menu-title">Colors</span>
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
             <i class="mdi mdi-account-multiple-plus menu-icon"></i>
             <span class="menu-title">Users</span>
@@ -65,7 +59,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="homeSlider/homeSlider.html">
+            <a class="nav-link" href="{{ url('admin/sliders') }}">
             <i class="mdi mdi-view-carousel menu-icon"></i>
             <span class="menu-title">Home Slider</span>
             </a>
