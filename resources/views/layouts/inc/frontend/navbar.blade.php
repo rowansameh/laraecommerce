@@ -80,31 +80,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">All Categories</a>
+                        <a class="nav-link" href="{{ url('/collections') }}">All Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">New Arrivals</a>
+                        <a class="nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Featured Products</a>
+                        <a class="nav-link" href="#">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Electronics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fashions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Accessories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Appliances</a>
+                        <a class="nav-link" href="#">My Account</a>
                     </li>
                 </ul>
             </div>
