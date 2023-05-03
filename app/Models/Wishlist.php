@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+
 
 class Wishlist extends Model
 {
-    use HasFactory;
+    
 
     protected $table ='wishlists';
 
@@ -15,5 +18,15 @@ class Wishlist extends Model
         'user_id',
         'product_id'
     ];
+
+  /**
+   * get the user that owns the Wishlist
+   *   
+   *  @return \Illuminate\Database\Eloquent\Factories\Relations\BelongsTo
+   */
+  public function product(): BelongsTo
+   {
+        return $this->belongsTo(Product::class, 'product_id', 'id');
+   }
 
 }

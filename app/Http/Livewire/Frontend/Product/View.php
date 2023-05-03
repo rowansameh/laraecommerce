@@ -16,7 +16,7 @@ class View extends Component
           {
               if(Wishlist::where('user_id',auth()->user()->id)->where('product_id',$productid)->exists())
               {
-                session()->flash('message','Aleardy added to wishlist ');
+                session()->flash('message','Aleardy added to wishlist');
                 return false;
               }
               $wishlist =Wishlist::create([
