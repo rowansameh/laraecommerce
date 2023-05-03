@@ -28,7 +28,6 @@
                             <tr>
                                 <td>{{ $brand->id }}</td>
                                 <td>{{ $brand->name }}</td>
-                                <td>{{ $brand->slug }}</td>
                                 <td>
                                     @if($brand->category)
                                     {{ $brand->category->name }}
@@ -36,6 +35,7 @@
                                         No Category
                                     @endif
                                 </td>
+                                <td>{{ $brand->slug }}</td>
                                 <td>{{ $brand->status == '1' ? 'hidden':'visible' }}</td>
                                 <td>
 
