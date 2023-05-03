@@ -8,7 +8,7 @@ use illuminate\Support\Facades\Auth;
 
 class View extends Component
 {
-    public $category, $product;
+    public $category, $product, $quantityCount =1;
 
     public function addToWishList($productid)
       {
@@ -17,13 +17,25 @@ class View extends Component
               if(Wishlist::where('user_id',auth()->user()->id)->where('product_id',$productid)->exists())
               {
                 session()->flash('message','Aleardy added to wishlist');
+                $this->dispatchBrowserEvent('message', [
+                  'text' => 'Aleardy added to wishlist',
+                  'type' => 'warning',  
+                  'status' => 409
+                ]);
                 return false;
               }
               $wishlist =Wishlist::create([
                 'user_id' => auth()->user()->id,
                 'product_id' => $productid,
               ]);
+              $this->emit('wishlistAddedUpdated');
               session()->flash('message',' wishlist added successfuly');
+              $this->dispatchBrowserEvent('message', [
+                'text' => 'Wishlist Item Removed Successfully',
+                'type' => 'success',  
+                'status' => 200
+              ]);
+    
           }
          else
           {
@@ -33,6 +45,22 @@ class View extends Component
           
 
     }
+
+    public function incrementQuantity()
+    {
+      if($this->quantityCount <10){
+        $this->quantityCount++;
+      }
+       
+    }
+
+    public function decrementQuantity()
+    {
+      if($this->quantityCount >1){
+       $this->quantityCount--;
+    }
+    
+  }
 
 
     public function mount($category, $product)

@@ -1,15 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ecommerce Product View Design</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
     <div class="py-3 py-md-5">
         <div class="container">
@@ -53,15 +42,18 @@
                         </div>
                         <div class="mt-2">
                             <div class="input-group">
-                                <span class="btn btn1"><i class="fa fa-minus"></i></span>
-                                <input type="text" value="1" class="input-quantity" />
-                                <span class="btn btn1"><i class="fa fa-plus"></i></span>
+                                <span class="btn btn1" wire:click="decrementQuantity"><i class="fa fa-minus"></i></span>
+                                <input type="text" wire:model="quantityCount" value="{{ $this->quantityCount }}" readonly class="input-quantity" />
+                                <span class="btn btn1"wire:click="incrementQuantity"><i class="fa fa-plus"></i></span>
                             </div>
                         </div>
                         <div class="mt-2">
                             <a href="" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
                             <button type="button" wire:click="addToWishList({{ $product->id }})" class="btn btn1"> 
+                                <span wire:loading.remove wire:target="addToWishlist" >
                                 <i class="fa fa-heart"></i> Add To Wishlist
+                                </span>
+                                <span wire:loading wire:target="addToWishlist">Adding...</span>
                              </button>
                         </div>
                         <div class="mt-3">
