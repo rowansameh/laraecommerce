@@ -25,7 +25,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('Wishlist') }}">
-                                <i class="fa fa-heart"></i> Wishlist (<livewire:frontend.wishlist-count />)
+                                <i class="fa fa-heart"></i> Wishlist (0)
                             </a>
                         </li>
                         @guest

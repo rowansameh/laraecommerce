@@ -17,25 +17,13 @@ class View extends Component
               if(Wishlist::where('user_id',auth()->user()->id)->where('product_id',$productid)->exists())
               {
                 session()->flash('message','Aleardy added to wishlist');
-                $this->dispatchBrowserEvent('message', [
-                  'text' => 'Aleardy added to wishlist',
-                  'type' => 'warning',  
-                  'status' => 409
-                ]);
                 return false;
               }
               $wishlist =Wishlist::create([
                 'user_id' => auth()->user()->id,
                 'product_id' => $productid,
               ]);
-              $this->emit('wishlistAddedUpdated');
               session()->flash('message',' wishlist added successfuly');
-              $this->dispatchBrowserEvent('message', [
-                'text' => 'Wishlist Item Removed Successfully',
-                'type' => 'success',  
-                'status' => 200
-              ]);
-    
           }
          else
           {
@@ -65,8 +53,8 @@ class View extends Component
 
     public function mount($category, $product)
     {
-       $this->category = $category;
-       $this->product = $product;
+        $this->category = $category;
+        $this->product = $product;
     }
 
     public function render()

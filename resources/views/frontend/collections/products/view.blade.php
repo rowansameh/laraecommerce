@@ -13,9 +13,9 @@
 @endsection
 
 @section('content')
- 
-     <div>
-         <livewire:frontend.product.view :category="$category" :product="$product"/>
-     </div>
+
+    <div>
+        <livewire:frontend.product.view :category="$category" :product="$product"/>
+    </div>
 
 @endsection
