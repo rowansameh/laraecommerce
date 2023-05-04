@@ -17,19 +17,35 @@ class View extends Component
               if(Wishlist::where('user_id',auth()->user()->id)->where('product_id',$productid)->exists())
               {
                 session()->flash('message','Aleardy added to wishlist');
+                 
+                  $this->dispatchBrowserEvent('message', [
+                      'text' => 'Aleardy added to wishlist',
+                      'type' => 'warning',  
+                      'status' => 409
+                  ]);
                 return false;
               }
+              else
+               {
               $wishlist =Wishlist::create([
                 'user_id' => auth()->user()->id,
                 'product_id' => $productid,
               ]);
-              session()->flash('message',' wishlist added successfuly');
+              $this ->emit('wishlistAddedUpdated');
+              session()->flash('message',' Wishlist Added successfuly');
+              $this->dispatchBrowserEvent('message', [
+                 'text' => 'wishlist added successfuly',
+                'type' => 'success',  
+                 'status' => 200
+            ]);
           }
-         else
-          {
+              
+              }
+             else
+              {
             session()->flash('message','please login first');
             return false;
-          }
+              }
           
 
     }
