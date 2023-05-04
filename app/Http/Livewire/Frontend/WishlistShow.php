@@ -11,7 +11,7 @@ class WishlistShow extends Component
     {
         $wishlist = Wishlist::where('user_id', auth()->user()->id)->get();
         return view('livewire.frontend.wishlist-show',[
-             'wishlist' => $wishlist
+            'wishlist' => $wishlist
         ]);
     }
 }

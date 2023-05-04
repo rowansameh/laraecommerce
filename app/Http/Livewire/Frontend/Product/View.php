@@ -19,11 +19,14 @@ class View extends Component
                     session()->flash('message','Aleardy added to wishlist');
                     return false;
                 }
-                $wishlist =Wishlist::create([
+                else
+                {
+                Wishlist::create([
                     'user_id' => auth()->user()->id,
                     'product_id' => $productid,
                 ]);
                 session()->flash('message',' wishlist added successfuly');
+                }
             }
             else
             {

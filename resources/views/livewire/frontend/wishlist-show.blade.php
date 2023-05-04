@@ -1,7 +1,7 @@
 <div>
 <div class="py-3 py-md-5 bg-light">
         <div class="container">
-    
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="shopping-cart">
@@ -22,25 +22,24 @@
 
 
 
-
-                         @forelse ($wishlist as $wishlistitem)
-                         @if ($wishlistitem->product)
+                        @forelse ($wishlist as $wishlistItem)
+                        @if ($wishlistItem->product)
                         <div class="cart-item">
                             <div class="row">
                                 <div class="col-md-6 my-auto">
-                                    <a href="{{ url('collections/'.$wishlistitem->product->category->slug.'/'.$wishlistitem->product->slug) }}">
+                                    <a href="{{ url('collections/'.$wishlistItem->product->category->slug.'/'.$wishlistItem->product->slug) }}">
                                         <label class="product-name">
-                                            <img src="{{ $wishlistitem->product->productImages[0]->image }}" 
-                                                 style="width: 50px; height: 50px" 
-                                                 alt="{{ $wishlistitem->product->name }}" />
-                                             {{ $wishlistitem->product->name }}
+                                            <img src="{{ $wishlistItem->product->productImages[0]->image }}"
+                                                style="width: 50px; height: 50px"
+                                                alt="{{ $wishlistItem->product->name }}" />
+                                            {{ $wishlistItem->product->name }}
                                         </label>
                                     </a>
                                 </div>
                                 <div class="col-md-2 my-auto">
-                                    <label class="price">{{ $wishlistitem->product->selling_price }} </label>
+                                    <label class="price">${{ $wishlistItem->product->selling_price }} </label>
                                 </div>
-                
+
                                 <div class="col-md-2 col-12 my-auto">
                                     <div class="remove">
                                         <a href="" class="btn btn-danger btn-sm">
@@ -50,11 +49,11 @@
                                 </div>
                             </div>
                         </div>
-                         @endif
+                        @endif
                     @empty
-                           <h4> No Wishlist Added</h4>
-                         @endforelse
-                                
+                        <h4> No Wishlist Added</h4>
+                        @endforelse
+
                     </div>
                 </div>
             </div>
