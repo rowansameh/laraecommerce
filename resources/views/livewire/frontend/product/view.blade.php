@@ -28,7 +28,7 @@
                         No image Added
                         @endif
 
-                   
+
                         @if($product->quantity)
                         <label class="btn-sm py-1 mt-2 text-white bg-success">In Stock</label>
                         @else
@@ -41,11 +41,11 @@
                     <div class="product-view">
                         <h4 class="product-name">
                             {{ $product->name }}
-                            
+
                         </h4>
                         <hr>
                         <p class="product-path">
-                            Home /{{ $product->category->name }}  /  {{ $product->name }}/
+                            Home /{{ $product->category->name }}  /  {{ $product->name }}
                         </p>
                         <div>
                             <span class="selling-price"> {{ $product->selling_price }}</span>
@@ -60,14 +60,17 @@
                         </div>
                         <div class="mt-2">
                             <a href="" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
-                            <button type="button" wire:click="addToWishList({{ $product->id }})" class="btn btn1"> 
-                                <i class="fa fa-heart"></i> Add To Wishlist
-                             </button>
+                            <button type="button" wire:click="addToWishList({{ $product->id }})" class="btn btn1">
+                                <span wire:loading.remove>
+                                    <i class="fa fa-heart"></i> Add To Wishlist
+                                </span>
+                                <span wire:loading wire:target="addToWishList">Adding...</span>
+                            </button>
                         </div>
                         <div class="mt-3">
                             <h5 class="mb-0">Small Description</h5>
                             <p>
-                                 {!! $product->Small_Description !!}
+                                {!! $product->small_description !!}
                             </p>
                         </div>
                     </div>
@@ -93,5 +96,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-     
+
 

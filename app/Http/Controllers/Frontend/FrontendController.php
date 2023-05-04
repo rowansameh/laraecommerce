@@ -39,15 +39,15 @@ class FrontendController extends Controller
 
             $product = $category->products()->where('slug',$product_slug)->where('status','0')->first();
             if($product)
-           {
-                return view('frontend.collections.products.view', compact('product','category'));
-           }else{
-                return redirect()->back();
-           }
-            
+        {
+            return view('frontend.collections.products.view', compact('product','category'));
         }else{
             return redirect()->back();
         }
-   }
+
+        }else{
+            return redirect()->back();
+        }
+    }
 
 }
