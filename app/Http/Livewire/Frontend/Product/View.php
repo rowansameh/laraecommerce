@@ -80,7 +80,11 @@ class View extends Component
             {
                 if(Cart::where('user_id',auth()->user()->id)->where('product_id',$productId)->exists())
                 {
-                    session()->flash('message','Product Already Added to Cart');
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Product Already Added to Cart',
+                        'type' => 'success',
+                        'status' => 200
+                    ]);
                 }
                 else
                 {
