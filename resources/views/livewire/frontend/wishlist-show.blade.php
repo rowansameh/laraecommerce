@@ -8,14 +8,17 @@
 
                         <div class="cart-header d-none d-sm-none d-mb-block d-lg-block">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <h4>Products</h4>
                                 </div>
                                 <div class="col-md-2">
                                     <h4>Price</h4>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <h4>Remove</h4>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4>Shopping Cart</h4>
                                 </div>
                             </div>
                         </div>
@@ -26,7 +29,7 @@
                         @if ($wishlistItem->product)
                         <div class="cart-item">
                             <div class="row">
-                                <div class="col-md-6 my-auto">
+                                <div class="col-md-4 my-auto">
                                     <a href="{{ url('collections/'.$wishlistItem->product->category->slug.'/'.$wishlistItem->product->slug) }}">
                                         <label class="product-name">
                                             <img src="{{ $wishlistItem->product->productImages[0]->image }}"
@@ -40,17 +43,30 @@
                                     <label class="price">${{ $wishlistItem->product->selling_price }} </label>
                                 </div>
 
-                                <div class="col-md-2 col-12 my-auto">
+                                <div class="col-md-3 col-12 my-auto">
                                     <div class="remove">
                                         <button type="button" wire:click="removeWishLlistItem({{  $wishlistItem->id  }})" class="btn btn-danger btn-sm">
                                             <span wire:loading.remove wire:target="removeWishLlistItem({{  $wishlistItem->id  }})" >
                                             <i class="fa fa-trash"></i> Remove
                                             </span>
                                             <span wire:loading wire:target="removeWishLlistItem({{  $wishlistItem->id  }})">
-                                            <i class="fa fa-trash"></i> Removing</span>
+                                            <i class="fa fa-trash"></i> Removing...</span>
                                         </button>
                                     </div>
                                 </div>
+
+                                {{-- <div class="col-md-3 col-12 my-auto">
+                                    <div class="remove">
+                                        <button type="button" wire:click="addToCart({{$wishlistItem->id}})" class="btn btn-success btn-sm">
+                                            <span wire:loading.remove wire:target="addToCart({{  $wishlistItem->id  }})" >
+                                            <i class="fa fa-cart-plus"></i> Add
+                                            </span>
+                                            <span wire:loading wire:target="removeWishLlistItem({{  $wishlistItem->id  }})">
+                                            <i class="fa fa-cart-plus"></i>Adding...</span>
+                                        </button>
+                                    </div>
+                                </div> --}}
+
                             </div>
                         </div>
                         @endif

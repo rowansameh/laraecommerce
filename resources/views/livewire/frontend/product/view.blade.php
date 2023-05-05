@@ -48,10 +48,15 @@
                             </div>
                         </div>
                         <div class="mt-2">
-                            <a href="" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
-                            <button type="button" wire:click="addToWishList({{ $product->id }})" class="btn btn1"> 
+
+                            <button type="button" wire:click="addToCart({{$product->id}})" class="btn btn1">
+                                <i class="fa fa-shopping-cart"></i> Add To Cart
+                            </button>
+
+
+                            <button type="button" wire:click="addToWishList({{ $product->id }})" class="btn btn1">
                                 <i class="fa fa-heart"></i> Add To Wishlist
-                             </button>
+                            </button>
                         </div>
                         <div class="mt-3">
                             <h5 class="mb-0">Small Description</h5>
