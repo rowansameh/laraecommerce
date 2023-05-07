@@ -39,6 +39,17 @@ class WishlistShow extends Component
     //     }
     // }
 
+    
+
+    public function addtoCart(int $cartId)
+    {
+
+        
+    }
+    
+        
+
+    
     public function removeWishLlistItem(int $wishlistId)
     {
         Wishlist::where('user_id', auth()->user()->id)->where('id',$wishlistId)->delete();
@@ -61,3 +72,4 @@ class WishlistShow extends Component
         ]);
     }
 }
+
