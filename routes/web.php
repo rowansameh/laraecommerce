@@ -76,14 +76,15 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
 
 
-    
+
     Route::controller(App\Http\Controllers\Admin\OrderController::class)->group(function () {
         Route::get('/orders', 'index');
         Route::get('/orders/{orderId}', 'show');
         Route::put('/orders/{orderId}', 'updateOrderStatus');
 
 
-
+        Route::get('/invoice/{orderId}', 'viewInvoice');
+        Route::get('/invoice/{orderId}/generate', 'generateInvoice');
     });
 
 

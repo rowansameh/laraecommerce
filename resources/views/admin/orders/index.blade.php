@@ -7,12 +7,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3>My Order <Details></details></h3>
+                    <h3>My Orders</h3>
                 </div>
                 <div class="card-body">
                 <form action="" method="GET">
 
-            
+
 
                     <div class="row">
                         <div class="col-md-3">
@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-md-3">
                             <label>Filter by Status</label>
-                           <select name="status" class="form-selsect">
+                            <select name="status" class="form-selsect">
                                 <option value="">Select All Status</option>
                                 <option value="in progress" {{ Request::get('status') == 'in progress' ? 'selected' :'' }}  >In Progress</option>
                                 <option value="completed" {{ Request::get('status') == 'completed' ? 'selected' :'' }} >Completed</option>
@@ -31,7 +31,7 @@
                             </select>
                         </div>
                         </div class="col-md-6">
-                            <br/> 
+                            <br/>
                             <button type="submit" class="btn btn-primary">Filter</button>
                         </div>
                     </div>

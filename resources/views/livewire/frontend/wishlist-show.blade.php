@@ -42,7 +42,7 @@
                                 <div class="col-md-2 my-auto">
                                     <label class="price">${{ $wishlistItem->product->selling_price }} </label>
                                 </div>
-                            
+
 
                                 <div class="col-md-3 col-12 my-auto">
                                     <div class="remove">
@@ -55,15 +55,15 @@
                                         </button>
                                     </div>
                                 </div>
-                               
+
 
                                 <div class="col-md-3 col-12 my-auto">
                                     <div class="add">
-                                        <button type="button" wire:click="addtoCart({{$wishlistItem->id}})" class="btn btn-success btn-sm">
-                                            <span wire:loading.remove wire:target="addtoCart({{  $wishlistItem->id  }})" >
+                                        <button type="button" wire:click="moveToCart({{$wishlistItem->id}})" class="btn btn-success btn-sm">
+                                            <span wire:loading.remove wire:target="moveToCart({{  $wishlistItem->id  }})" >
                                             <i class="fa fa-cart-plus"></i> Add To Cart
                                             </span>
-                                            <span wire:loading wire:target="addtoeCart({{  $wishlistItem->id  }})">
+                                            <span wire:loading wire:target="moveToCart({{  $wishlistItem->id  }})">
                                             <i class="fa fa-cart-plus"></i>Adding...</span>
                                         </button>
                                     </div>

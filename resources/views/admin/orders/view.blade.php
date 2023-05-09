@@ -3,9 +3,9 @@
 @section('title', 'My Orders Details')
 
 @section('content')
+
 <div class="row">
         <div class="col-md-12">
-
 
         @if(session('message'))
         <div class="alert alert-success mb-3">{{ session('message') }}</div>
@@ -13,13 +13,17 @@
 
         <div class="card">
             <div class="card-header">
-                <h3>My Orders Details
+                <h3>My Order Details
                     <a href="{{ url('admin/orders') }}" class="btn btn-danger btn-sm float-end mx-1">Back</a>
+                    <a href="{{ url('admin/invoice/'.$order->id.'/generate') }}" class="btn btn-primary btn-sm float-end mx-1">
+                        Download Invoice
+                    </a>
+                    <a href="{{ url('admin/invoice/'.$order->id) }}" target="_blank" class="btn btn-warning btn-sm float-end mx-1">
+                        View Invoice
+                    </a>
                 </h3>
             </div>
             <div class="card-body">
-                   
-
 
                         <div class="row">
                             <div class="col-md-6">
@@ -91,7 +95,7 @@
                                 </tbody>
                             </table>
                         </div>
-                
+
                 </div>
             </div>
 
@@ -101,25 +105,25 @@
                     <h4>Order Process (Order Status Update)</h4>
                     <hr>
                     <div class="row">
-                     <div class="col-md-5">
+                    <div class="col-md-5">
                         <form action="{{ url('admin/orders/'.$order->id)  }}" method="POST">
                             @csrf
                             @method('PUT')
 
                             <label>Update Your Order Status</label>
-                            <div class="inpit-group">
-                            <select name="order_status" class="form-select">
-                            <option value="">Select Orders Status</option>
-                                <option value="in progress" {{ Request::get('status') == 'in progress' ? 'selected' :'' }}  >In Progress</option>
-                                <option value="completed" {{ Request::get('status') == 'completed' ? 'selected' :'' }} >Completed</option>
-                                <option value="pending" {{ Request::get('status') == 'pending' ? 'selected':'' }} >Pending</option>
-                                <option value="cancelled" {{ Request::get('status') == 'cancelled' ? 'selected' :'' }} >Cancelled</option>
-                                <option value="out-for-delivery" {{ Request::get('status') == 'out-for-delivery' ? 'selected' :'' }} >Out for delivery</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary text-white">Update</button>
-                     </div>
+                            <div class="input-group">
+                                <select name="order_status" class="form-select">
+                                    <option value="">Select Orders Status</option>
+                                    <option value="in progress" {{ Request::get('status') == 'in progress' ? 'selected' :'' }}  >In Progress</option>
+                                    <option value="completed" {{ Request::get('status') == 'completed' ? 'selected' :'' }} >Completed</option>
+                                    <option value="pending" {{ Request::get('status') == 'pending' ? 'selected':'' }} >Pending</option>
+                                    <option value="cancelled" {{ Request::get('status') == 'cancelled' ? 'selected' :'' }} >Cancelled</option>
+                                    <option value="out-for-delivery" {{ Request::get('status') == 'out-for-delivery' ? 'selected' :'' }} >Out for delivery</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary text-white">Update</button>
+                            </div>
 
-                      </form>
+                        </form>
                     </div>
                     <div class="col-md-7">
                         <br/>
