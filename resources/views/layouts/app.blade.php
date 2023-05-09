@@ -22,6 +22,12 @@
     <!--Styles-->
     <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/css/custom.css')}}" rel="stylesheet">
+    
+    <!-- Exzoom - prod Image -->
+    <link href="{{ asset('assets/exzoom/jquery.exzoom.css')}}" rel="stylesheet">
+
+
+    <link href="{{ asset('assets/css/custom.css')}}" rel="stylesheet">
 
     <!-- CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
@@ -36,6 +42,8 @@
         <main>
             @yield('content')
         </main>
+        @include('layouts.inc.frontend.footer')
+
     </div>
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
@@ -50,6 +58,10 @@
         alertify.notify(event.detail.text, event.detail.type);
     });
 </script>
+
+
+<script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+
 
     @livewireScripts
     @stack('scripts')
