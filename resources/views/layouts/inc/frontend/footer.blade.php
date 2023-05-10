@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <h4 class="footer-heading">Funda Blossom</h4>
+                        <h4 class="footer-heading">Blossom</h4>
                         <div class="footer-underline"></div>
                         <p>
                         Perfumes  website offer customers a convenient way to browse, compare, and purchase fragrances online.
