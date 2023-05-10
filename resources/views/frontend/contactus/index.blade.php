@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contactus')
+@section('title', 'Contact us')
 
 @section('content')
 
@@ -15,8 +15,9 @@ div {text-align: center;}
 </head>
 <body>
 
-<h1>hello</h1>
-<p>you can contact with us by this Gmail:bassmaelwazzan@gmail.com</p>
+<h1>Hello</h1>
+<p>For any feedback or suggestions, you can contact us by this Gmail:</p>
+<p>bassmaelwazzan@gmail.com</p>
 
 
 </body>
