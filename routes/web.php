@@ -24,6 +24,9 @@ Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::cl
 Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
 Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
 
+Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
+
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('wishlist',[App\Http\Controllers\Frontend\WishlistController::class, 'index']);
@@ -43,6 +46,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+
+    Route::get('settings', [App\Http\Controllers\Admin\SettingController::class, 'index']);
 
     Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function () {
         Route::get('sliders', 'index');
