@@ -26,7 +26,7 @@ div {text-align: center;}
 <div id="contanier">
     <div class="coll">
         <h1 class="heading"> Team Members </h1>
-        <p class="paragraph">Rowan Sameh Ibrahim Ibrahim El Aabedy</p>
+        <p class="paragraph">Rowan Sameh Ebrahem Ebrahem El Ebedy</p>
                              Sara Alaa Eldin Khaled Abd El Rahman</p>
                              Esraa Abd El Hafeez Mohamed Abd El Wahab</p>
                              Mariam Mohamed Hassan Mogahed El saeidy</p>
