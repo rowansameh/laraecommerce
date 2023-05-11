@@ -85,10 +85,10 @@
                         <a class="nav-link" href="{{ url('/collections') }}">All Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{{ url('about us' )}}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="{{ url('contact us' )}}">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">My Account</a>
