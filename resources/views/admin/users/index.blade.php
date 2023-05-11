@@ -36,32 +36,31 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                        @if ($user->role_as == '0')
-                           <label class="badge btn-primary">user</label>
-                        @elseif ($user->role_as == '1')
-                           <label class="badge btn-success">Admin</label>
-                        @else
-                        <label class="badge btn-danger">none</label>
-                        @endif
+                                @if ($user->role_as == '0')
+                                    <label class="badge btn-primary">user</label>
+                                @elseif ($user->role_as == '1')
+                                    <label class="badge btn-success">Admin</label>
+                                @else
+                                <label class="badge btn-danger">none</label>
+                                @endif
 
 
                             <td>
                                 <a href="{{ url('admin/users/'.$user->id.'/edit')}}" class="btn btn-sm btn-success">
                                     Edit
                                 </a>
-                                <a href="{{ url('admin/users/'.$user->id.'/delete')}}" 
-                                onclick="return confirm('Are you sure, you want to delete this data?')"
-                                 class="btn btn-sm btn-danger">
+                                <a href="{{ url('admin/users/'.$user->id.'/delete')}}"
+                                    onclick="return confirm('Are you sure, you want to delete this data?')"
+                                    class="btn btn-sm btn-danger">
                                     Delete
                                 </a>
                             </td>
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="5">No user Available</td>
+                            <td colspan="5">No Users Available</td>
                         </tr>
                         @endforelse
-
                     </tbody>
                 </table>
             </div>
