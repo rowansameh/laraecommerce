@@ -28,7 +28,7 @@ div {text-align: center;}
         <h1 class="heading"> Team Members </h1>
         <p class="paragraph">Basma Mohamed Abd El Mohsen El wazzan</p>
                              Rowan Sameh Ibrahim Ibrahim El Aabedy</p>
-                             Sara Alaa Eldin Khaled Abd El Rahman</p>
+                             Sara Alaa Eldin Khaled Abd ElRahman</p>
                              Esraa Abd El Hafeez Mohamed Abd El Wahab</p>
                              Mariam Mohamed Hassan Mogahed El saeidy</p>
                              Hania Saeid Zakaria El agawany</p>
