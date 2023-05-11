@@ -53,8 +53,8 @@
             </a>
             <div class="collapse" id="users">
             <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#"> Add User </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> View Users </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/users/create')}}"> Add User </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/users')}}"> View Users </a></li>
             </ul>
             </div>
         </li>

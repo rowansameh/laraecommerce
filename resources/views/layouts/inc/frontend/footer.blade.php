@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <h4 class="footer-heading">Blossom</h4>
+                        <h4 class="footer-heading">{{ $appSetting->website_name ?? 'website name'}}</h4>
                         <div class="footer-underline"></div>
                         <p>
                         Perfumes  website offer customers a convenient way to browse, compare, and purchase fragrances online.
@@ -32,12 +32,23 @@
                         <div class="footer-underline"></div>
                         <div class="mb-2">
                             <p>
-                                <i class="fa fa-map-marker"></i> Carrefour Alex City Center
+                                <i class="fa fa-map-marker"></i> 
+                                Carrefour Alex City Center
+                                {{ $appSetting->address ?? 'address'}}
                             </p>
                         </div>
                         <div class="mb-2">
                             <a href="" class="text-white">
+<<<<<<< HEAD
+                                <i class="fa fa-phone"></i> {{ $appSetting->phone1 ?? 'phone 1'}}
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a href="" class="text-white">
+                                <i class="fa fa-envelope"></i>  {{ $appSetting->email1 ?? 'email 1'}}
+=======
                                 <i class="fa fa-envelope"></i> basmaelwazzan@gmail.com
+>>>>>>> 768849ac23f15cec77d1a24f0adc722dfc79167c
                             </a>
                         </div>
                     </div>
@@ -53,10 +64,24 @@
                     <div class="col-md-4">
                         <div class="social-media">
                             Get Connected:
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-instagram"></i></a>
-                            <a href=""><i class="fa fa-youtube"></i></a>
+                            {{ $appSetting->phone1 ?? 'phone 1'}}
+                            
+                            @if($appSetting->facebook)
+                              <a href="{{ $appSetting->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                            @endif
+                            
+                            @if($appSetting->twitter)
+                              <a href="{{ $appSetting->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
+                           
+                            @if($appSetting->instagram)
+                              <a href="{{ $appSetting->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
+                            @endif
+                           
+                            @if($appSetting->youtube)
+                              <a href="{{ $appSetting->youtube }}" target="_blank"><i class="fa fa-youtube"></i></a>
+                            @endif
+                        
                         </div>
                     </div>
                 </div>
