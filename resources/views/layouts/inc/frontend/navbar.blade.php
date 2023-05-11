@@ -6,7 +6,7 @@
                     <h5 class="brand-name">Blossom</h5>
                 </div>
                 <div class="col-md-5 my-auto">
-                    <form role="search">
+                    <form  role="search">
                         <div class="input-group">
                             <input type="search" placeholder="Search your product" class="form-control" />
                             <button class="btn bg-white" type="submit">
