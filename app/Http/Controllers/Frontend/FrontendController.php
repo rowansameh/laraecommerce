@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Slider;
+<<<<<<< HEAD
 use App\Models\Product;
+=======
+use App\Models\product;
+use App\Models\Category;
+>>>>>>> 9b00e5f295a5dad36c34e22393161b02982f0437
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -18,6 +23,7 @@ class FrontendController extends Controller
     }
 
 
+<<<<<<< HEAD
     public function searchproducts(Request $request)
     {
        if($request->search){
@@ -31,6 +37,8 @@ class FrontendController extends Controller
     }
 
 
+=======
+>>>>>>> 9b00e5f295a5dad36c34e22393161b02982f0437
     public function categories()
     {
         $categories = Category::where('status','0')->get();
