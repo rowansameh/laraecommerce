@@ -19,14 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
-Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
-Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
-Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
+Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function (){
 
-Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
-Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
+    Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+    Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
+    Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
+    Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
 
+    Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
+    Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
+
+
+    Route::get('search', 'searchproducts');
+
+});
 
 Route::middleware(['auth'])->group(function () {
 
