@@ -6,7 +6,7 @@
                     <h5 class="brand-name">{{ $appSetting->website_name ?? 'website name'}}</h5>
                 </div>
                 <div class="col-md-5 my-auto">
-                    <form role="search">
+                    <form  role="search">
                         <div class="input-group">
                             <input type="search" placeholder="Search your product" class="form-control" />
                             <button class="btn bg-white" type="submit">
@@ -46,7 +46,7 @@
                                 <i class="fa fa-user"></i> {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ url('profile' )}}"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ url('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
                             <li><a class="dropdown-item" href="{{ url('orders') }}"><i class="fa fa-list"></i> My Orders</a></li>
 
                             <li>
@@ -91,7 +91,7 @@
                         <a class="nav-link" href="{{ url('contact us' )}}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('profile')}}">My Account</a>
+                        <a class="nav-link" href="{{ url('profile' )}}">My Account</a>
                     </li>
                 </ul>
             </div>

@@ -24,6 +24,7 @@ Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::cl
 Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
 Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
 
+
 Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
 Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
 
@@ -36,6 +37,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('orders',[App\Http\Controllers\Frontend\OrderController::class, 'index']);
     Route::get('orders/{orderId}',[App\Http\Controllers\Frontend\OrderController::class, 'show']);
+
+    Route::get('profile',[App\Http\Controllers\Frontend\UserController::class, 'index']);
+    Route::post('profile',[App\Http\Controllers\Frontend\UserController::class, 'updateUserDetails']);
 
 });
 
