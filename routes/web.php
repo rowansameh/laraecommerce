@@ -21,16 +21,13 @@ Auth::routes();
 
 Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function (){
 
-<<<<<<< HEAD
     Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
     Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
     Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
     Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
-=======
 
 Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
 Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
->>>>>>> 9b00e5f295a5dad36c34e22393161b02982f0437
 
     Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
     Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
