@@ -26,8 +26,8 @@ Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->grou
     Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
     Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
 
-Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
-Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
+    Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
+    Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
 
     Route::get('contact us', [App\Http\Controllers\Frontend\ContactusController::class, 'index']);
     Route::get('about us', [App\Http\Controllers\Frontend\aboutusController::class, 'index']);
@@ -51,12 +51,12 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
-Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
+    Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
+    Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
