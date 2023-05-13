@@ -6,11 +6,7 @@
                     <h5 class="brand-name">{{ $appSetting->website_name ?? 'website name'}}</h5>
                 </div>
                 <div class="col-md-5 my-auto">
-<<<<<<< HEAD
                     <form action="{{ url('search') }}" method="GET" role='searsh'>
-=======
-                    <form  role="search">
->>>>>>> 9b00e5f295a5dad36c34e22393161b02982f0437
                         <div class="input-group">
                             <input type="search" name="search" value="{{ Request::get('search') }}" placeholder="Search your product" class="form-control" />
                             <button class="btn bg-white" type="submit">

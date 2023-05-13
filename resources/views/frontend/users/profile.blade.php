@@ -73,11 +73,19 @@
                         <textarea name="address"  value= "{{ Auth::user()->userDetail->address ?? '' }}"   class="form-control" ></textarea>
                     </div>
                     </div>
-                        </div>
-                        <div class="col-md-12 ">
+                    <div class="col-md-6">
+                            <a class="" href="{{ url('orders') }}">My Orders</a>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                            <a class="" href="{{ url('wishlist') }}">My Wishlist</a>
+                    </div>
+                    </div>
+                        <div class="col-md-3 ">
                             <button type="submit" class="btn btn-primary">Save Data</button>
                         </div>
-                    </div>
+                         </div>
+                         
               </form>
 
           </div>
@@ -89,6 +97,9 @@
              </div> 
         </div>
 </div>
+
+
+
 
 
 @endsection
