@@ -102,7 +102,7 @@
 </div>
 
 
-<!-- Brand Update Modal -->
+<!-- Brand delete Modal -->
 <div wire:ignore.self class="modal fade" id="deleteBrandModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
