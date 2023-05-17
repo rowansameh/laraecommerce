@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-md-5 my-auto">
                     <form action="{{ url('search') }}" method="GET" role='searsh'>
-                    <form  role="search">
+                        
                         <div class="input-group">
                             <input type="search" name="search" value="{{ Request::get('search') }}" placeholder="Search your product" class="form-control" />
                             <button class="btn bg-white" type="submit">

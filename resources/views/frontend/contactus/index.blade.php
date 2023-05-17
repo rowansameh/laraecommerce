@@ -17,7 +17,7 @@ div {text-align: center;}
 
 <h1>Hello</h1>
 <p>For any feedback or suggestions, you can contact us by this Gmail:</p>
-<p>bassmaelwazzan@gmail.com</p>
+<p>basmaelwazzan@gmail.com</p>
 
 
 </body>
